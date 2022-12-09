@@ -138,6 +138,7 @@ services:
       - systemcredentialmanager
       - systementry
       - gepitemtagsmanager
+      - gepphysicaladdressmanager
 
     logging:
       driver: "fluentd"
@@ -203,7 +204,7 @@ services:
     image: systementry-6243
     container_name: systementry-6243
     ports: 
-      - 8014:8014
+      - 8016:8016
     env_file: .env
     depends_on:
       - mongo
@@ -220,6 +221,22 @@ services:
     container_name: gepitemtagsmanager-6243
     ports: 
       - 8006:8006
+    env_file: .env
+    depends_on:
+      - mongo
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        fluentd-async-connect: "true"
+        tag: fluent
+
+  gepphysicaladdressmanager: 
+    build: ../../../application/services/custom_services/gepphysicaladdressmanager
+    image: gepphysicaladdressmanager-6243
+    container_name: gepphysicaladdressmanager-6243
+    ports: 
+      - 0:0
     env_file: .env
     depends_on:
       - mongo

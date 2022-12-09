@@ -32,6 +32,7 @@ const routes: Routes = [
 
 { path : 'createtags', loadChildren: () => import('./createtags/createtags.module').then(m => m.CreatetagsModule), canActivate: [AuthGuard] } , 
 { path : 'updatetags', loadChildren: () => import('./updatetags/updatetags.module').then(m => m.UpdatetagsModule), canActivate: [AuthGuard] } , 
+{ path : 'getlocations', loadChildren: () => import('./getlocations/getlocations.module').then(m => m.GetlocationsModule), canActivate: [AuthGuard] } , 
 ];
 
 @NgModule({

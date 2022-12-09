@@ -9,5 +9,7 @@
 {"resources":"createtags", "role":"Guest"}
     ,
 {"resources":"updatetags", "role":"Guest"}
+    ,
+{"resources":"GetLocations", "role":"Guest"}
     
 ]

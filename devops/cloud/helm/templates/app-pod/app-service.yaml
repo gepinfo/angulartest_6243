@@ -28,5 +28,9 @@ spec:
     port: {{ .Values.service.gepitemtagsmanager.port }}
     targetPort: {{ .Values.service.gepitemtagsmanager.targetPort }}
 
+  - name: {{ .Values.service.gepphysicaladdressmanager.name }}
+    port: {{ .Values.service.gepphysicaladdressmanager.port }}
+    targetPort: {{ .Values.service.gepphysicaladdressmanager.targetPort }}
+
   selector:
     name: {{ .Values.app.prefix }}-app

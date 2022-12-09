@@ -48,6 +48,50 @@ module.exports = {
                 "credentialsParameter": ""
             }
         },          
+        {
+            "name": "gepphysicaladdressmanager-6243",
+            "image": `${process.env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/geppetto-generatedcode-angulartest-6243-gepphysicaladdressmanager:latest`,
+            "memoryReservation": "300",
+            "resourceRequirements": null,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": "0",
+                    "protocol": "tcp",
+                    "hostPort": "0"
+                }
+            ],
+            "environmentFiles": null,
+            "environment": [{"name":"MONGO_DB_URL","value":"mongodb://admin:password@angulartest.local:27017/angulartest_6243?authSource=admin"},{"name":"MONGO_DOMAIN","value":"angulartest.local"},{"name":"CAMUNDAPOD_URL","value":"http://angulartest.local:8080"},{"name":"SECURITYURL","value":"http://angulartest.local:8003"},{"name":"AUTHPROXYURL","value":"http://angulartest.local:8001"},{"name":"ADMINURL","value":"http://angulartest.local:8004"},{"name":"CAMUNDAURL","value":"http://angulartest.local:8002"},{"name":"GCAMURL","value":"http://angulartest.local:8007"},{"name":"APIGATEWAY","value":"http://angulartest.local:8000"}],
+            "secrets": null,
+            "mountPoints": [
+                {
+                  "readOnly": null,
+                  "containerPath": "/path/to/container",
+                  "sourceVolume": "angulartest"
+                }
+              ],
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/angulartest",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs",
+                    "awslogs-create-group": "true"
+                }
+            },
+            "ulimits": null,
+            "dockerLabels": null,
+            "dependsOn": null,
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            }
+        },          
     ],
     "volumes": [
         {
